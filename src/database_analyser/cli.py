@@ -5,6 +5,7 @@ import json
 from typing import Sequence
 
 from .analyser import AnalysisError, DatabaseReport, analyze_database
+from .reporting import report_to_dict
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -39,26 +40,7 @@ def main(argv: Sequence[str] | None = None) -> int:
 
 
 def _report_to_dict(report: DatabaseReport) -> dict[str, object]:
-    return {
-        "path": str(report.path),
-        "size_bytes": report.size_bytes,
-        "objects": [
-            {
-                "name": obj.name,
-                "type": obj.object_type,
-                "columns": [
-                    {
-                        "name": column.name,
-                        "data_type": column.data_type,
-                        "not_null": column.not_null,
-                        "primary_key_position": column.primary_key_position,
-                    }
-                    for column in obj.columns
-                ],
-            }
-            for obj in report.objects
-        ],
-    }
+    return report_to_dict(report)
 
 
 def _format_text_report(report: DatabaseReport) -> str:

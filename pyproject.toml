@@ -12,6 +12,7 @@ authors = [{ name = "Petr" }]
 
 [project.scripts]
 database-analyser = "database_analyser.cli:main"
+database-analyser-web = "database_analyser.web:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

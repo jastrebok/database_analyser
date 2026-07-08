@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Database Analyser</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
+    <script defer src="/app.js"></script>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">Database analyser</p>
+        <h1>Tables first. Frequency patterns next.</h1>
+        <p class="lede">
+          A simple overview of the loaded dump with a radar chart for the most frequent entries of each table.
+        </p>
+        <div id="summary" class="summary"></div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Schema and Table Overview</h2>
+          <p>Pick a schema tab, then a table tab, to inspect its full set of distinct values and radar chart.</p>
+        </div>
+        <div id="schema-tabs" class="tab-strip"></div>
+        <div id="table-tabs" class="tab-strip tab-strip-secondary"></div>
+        <div id="table-view" class="table-view"></div>
+      </section>
+    </main>
+  </body>
+</html>
