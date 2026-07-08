@@ -55,10 +55,7 @@ function analyzeDatabaseStructure(input) {
         }
 
         const values = Object.values(row);
-        return (
-          values.length > 0 &&
-          values.every((value) => value === null || value === undefined || value === '')
-        );
+        return values.every((value) => value === null || value === undefined || value === '');
       }).length,
     };
   });

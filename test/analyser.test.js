@@ -16,6 +16,7 @@ test('analyzeDatabaseStructure handles explicit tables array', () => {
         rows: [
           { id: 1, email: 'a@example.com' },
           { id: 2, email: '' },
+          {},
         ],
       },
     ],
@@ -24,9 +25,9 @@ test('analyzeDatabaseStructure handles explicit tables array', () => {
   const result = analyzeDatabaseStructure(input);
 
   assert.equal(result.totalTables, 1);
-  assert.equal(result.totalRows, 2);
+  assert.equal(result.totalRows, 3);
   assert.deepEqual(result.tables[0].columns, ['id', 'email']);
-  assert.equal(result.tables[0].emptyRows, 0);
+  assert.equal(result.tables[0].emptyRows, 1);
 });
 
 test('analyzeDatabaseStructure supports map-like table objects and infers columns', () => {
