@@ -1,0 +1,25 @@
+{
+  "name": "database_analyser",
+  "version": "1.0.0",
+  "description": "Analyze database content from imported structure/data files",
+  "main": "src/analyser.js",
+  "scripts": {
+    "test": "node --test",
+    "start": "node src/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jastrebok/database_analyser.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jastrebok/database_analyser/issues"
+  },
+  "homepage": "https://github.com/jastrebok/database_analyser#readme",
+  "bin": {
+    "database-analyser": "src/cli.js"
+  }
+}
