@@ -1,5 +1,5 @@
 function normalizeColumnName(column) {
-  return typeof column === 'string' ? column : column && column.name;
+  return typeof column === 'string' ? column : column?.name ?? null;
 }
 
 function inferColumns(rows) {

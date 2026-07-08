@@ -1,5 +1,5 @@
 {
-  "name": "database_analyser",
+  "name": "database-analyser",
   "version": "1.0.0",
   "description": "Analyze database content from imported structure/data files",
   "main": "src/analyser.js",
