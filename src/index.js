@@ -7,7 +7,10 @@ function createAnalyser() {
 
 if (require.main === module) {
   const analyser = createAnalyser();
-  const summary = analyser.analyse();
+  const summary = analyser.analyse({
+    tables: [{ name: 'users' }, { name: 'orders' }],
+    relationships: [{ from: 'orders', to: 'users' }]
+  });
 
   console.log(formatSummary(summary));
 }

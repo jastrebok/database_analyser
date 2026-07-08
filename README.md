@@ -11,5 +11,5 @@ Initial project layout for a Node.js-based database analyser.
 
 ## Available scripts
 
-- `npm start`
-- `npm test`
+- `npm start` - runs the starter flow against a small example schema
+- `npm test` - runs the Node.js built-in test suite
