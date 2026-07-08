@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "database-analyser"
+version = "0.1.0"
+description = "Initial database readability and schema inspection CLI"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "Petr" }]
+
+[project.scripts]
+database-analyser = "database_analyser.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
