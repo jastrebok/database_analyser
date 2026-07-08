@@ -50,7 +50,7 @@ test('analyzeDatabaseStructure supports map-like table objects and infers column
 });
 
 test('run reads file and returns analysis', () => {
-  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'database_analyser-'));
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'database-analyser-'));
 
   try {
     const inputPath = path.join(tempDir, 'db.json');
