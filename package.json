@@ -1,0 +1,25 @@
+{
+  "name": "database_analyser",
+  "version": "1.0.0",
+  "description": "Starter layout for a database analyser project.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jastrebok/database_analyser.git"
+  },
+  "keywords": [
+    "database",
+    "analysis"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jastrebok/database_analyser/issues"
+  },
+  "homepage": "https://github.com/jastrebok/database_analyser#readme"
+}
