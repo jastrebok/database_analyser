@@ -1,5 +1,5 @@
 {
-  "name": "database_analyser",
+  "name": "database-analyser",
   "version": "1.0.0",
   "description": "Starter layout for a database analyser project.",
   "main": "src/index.js",
