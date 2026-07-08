@@ -50,21 +50,26 @@ test('analyzeDatabaseStructure supports map-like table objects and infers column
 });
 
 test('run reads file and returns analysis', () => {
-  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'db-analyser-'));
-  const inputPath = path.join(tempDir, 'db.json');
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'database_analyser-'));
 
-  fs.writeFileSync(
-    inputPath,
-    JSON.stringify({
-      users: {
-        rows: [{ id: 1, name: 'Ada' }],
-      },
-    }),
-  );
+  try {
+    const inputPath = path.join(tempDir, 'db.json');
 
-  const result = run([inputPath]);
+    fs.writeFileSync(
+      inputPath,
+      JSON.stringify({
+        users: {
+          rows: [{ id: 1, name: 'Ada' }],
+        },
+      }),
+    );
 
-  assert.equal(result.totalTables, 1);
-  assert.equal(result.tables[0].name, 'users');
-  assert.equal(result.tables[0].rowCount, 1);
+    const result = run([inputPath]);
+
+    assert.equal(result.totalTables, 1);
+    assert.equal(result.tables[0].name, 'users');
+    assert.equal(result.tables[0].rowCount, 1);
+  } finally {
+    fs.rmSync(tempDir, { recursive: true, force: true });
+  }
 });
